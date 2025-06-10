@@ -1,37 +1,72 @@
-###  `Practical 5: Infinite Scroll with TanStack Query`
+#  Practical_5: Infinite Scroll with TanStack Query
 
-```markdown
-# Practical 5: Infinite Scroll with TanStack Query
-
-## Objective
-Implement infinite scrolling in the TikTok app using TanStack Query and cursor-based pagination.
-
-## Instructions
-
-### Part 1: Backend Setup
-
-1. In `videoController.js`, update `getAllVideos()` for cursor-based pagination.
-
-2. Update `getFollowingVideos()` the same way.
+## Objective:
+Implement an infinite scroll feature using TanStack Query in a React application.
 
 ---
 
-### Part 2: Frontend Setup
+## Table of Contents:
+- [Objective](#objective)
+- [Installation](#installation)
+- [Instructions](#instructions)
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Conclusion](#conclusion)
+- [Acknowledgments](#acknowledgments)
 
-1. Install:
+---
+
+## Installation:
+
+1. **Clone the repository:**
    ```bash
-   npm install @tanstack/react-query @tanstack/react-query-devtools
-In layout.js, wrap app in QueryClientProvider.
+   git clone <repository-url>
+   cd Practical5_InfiniteScroll
+2. **Install Dependencies:**
+npm install
 
-Update videoService.js for cursor-based API calls.
+## Instructions:
 
-Create useIntersectionObserver.js to detect scroll.
+1. **Setup TanStack Query:**
+- npm install @tanstack/react-query
+- Create QueryClient instance and wrap your app with QueryClientProvider.
 
-In VideoFeed.jsx, use useInfiniteQuery to load videos.
+2. **API Integration:**
+- Create an API service to fetch paginated data.
+- Use TanStack Query's useInfiniteQuery hook to manage data fetching.
 
-# Key Differences from Offset Pagination
-Uses cursor instead of page
+3. **Infinite Scroll Implementation:**
+- Add a scroll listener to detect when the user reaches the bottom of the page.
+- Trigger the next page fetch using fetchNextPage from useInfiniteQuery.
 
-Responses include nextCursor and hasNextPage
+4. **UI Components:**
+- Build components to display the fetched data.
+- Show a loading spinner while fetching new pages.
 
-Efficient, consistent scroll behavior
+5. **Error Handling:**
+- Handle API errors gracefully and display appropriate messages.
+
+## Features:
+
+1. **Infinite Scroll:**
+- Automatically fetch and display more data as the user scrolls down.
+
+2. **Optimized Data Fetching:**
+- Efficiently manage paginated data using TanStack Query.
+
+3. **Error Handling:**
+- Display error messages for failed API requests.
+
+4. **Loading Indicators:**
+- Show loading spinners during data fetching.
+
+## Technologies Used:
+- **React:* Frontend framework
+- **TanStack Query:** Data fetching and caching
+- **Axios:** HTTP client for API requests
+
+## Conclusion:
+- This project demonstrates how to implement an infinite scroll feature using TanStack Query. It provides hands-on experience in managing paginated data efficiently and creating a seamless user experience.
+
+## Acknowledgments:
+- Special thanks to the developers of TanStack Query for their excellent documentation and tools. 

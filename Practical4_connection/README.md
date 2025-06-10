@@ -1,77 +1,104 @@
-### `Practical 4: Connecting TikTok Frontend to Backend`
-
-```markdown
-# Practical 4: Connecting TikTok Frontend to Backend
+# Practical_4: Connecting TikTok Frontend to Backend
 
 ## Objective
-Integrate your Next.js frontend with an Express.js backend.
+to Integrate Next.js frontend with an Express.js backend.
 
-## Instructions
+---
 
+## Table of Contents:
+
+- [Objective](#objective)
+- [Installation](#installation)
+- [Instructions](#instructions)
+- [Features](#features)
+- [Technologies Used](#technologies)
+- [Conclusion](#conclusion)
+- [Acknowledgments](#acknowledgments)
+
+---
+
+## Installation:
+
+1. **Clone the repository:**
+   ```bash
+   git clone <repository-url>
+   cd Practical4_connection
+2. **Install Dependencies**
+npm install 
+
+## Instructions:
 ### Part 1: API & Auth Setup
 
-1. Install:
-   ```bash
-   npm install axios jwt-decode react-hot-toast
-Create src/lib/api-config.js with Axios instance.
+1. Install required packages:
+npm install axios jwt-decode react-hot-toast
+2. Create src/lib/api-config.js with an Axios instance.
+3. Add .env.local:
+4. Create authContext.jsx and wrap it in layout.js.
+5. Build UI components:
+- Modal.jsx
+- AuthForms.jsx
+- AuthModal.jsx
+6. Add login/logout functionality in MainLayout.jsx.
 
-Add .env.local:
+### Part 2: Video features
 
-```bash
-Copy code
-NEXT_PUBLIC_API_URL=http://localhost:8000/api
-```
-Create authContext.jsx and wrap in layout.js.
+1. **Create:**
+- videoService.js for API calls.
+- userService.js for user-related operations.
+2. **Update:**
+- VideoCard.jsx and VideoFeed.jsx to fetch real data.
+3. **Add pages:**
+- following/page.jsx
+- explore-users/page.jsx
+- profile/[userId]/page.jsx
+4. Update upload/page.jsx to allow video uploads.
 
-Build UI components:
+## Features:
 
-Modal.jsx
+1. **Authentication System:**
+- Secure login and logout functionality using JWT.
+- Persistent user sessions with token-based authentication.
 
-AuthForms.jsx
+2. **Video Upload and Management:**
+- Users can upload videos directly from the frontend.
+- Backend handles video storage and metadata processing.
 
-AuthModal.jsx
+3. **User Profiles:**
+- Dynamic user profile pages displaying uploaded videos and user details.
+- Follow/unfollow functionality for user connections.
 
-Add login/logout in MainLayout.jsx.
+4. **Video Feed:**
+- Real-time video feed displaying content from followed users.
+- Explore page for discovering new users and trending videos.
 
-### Part 2: Video Features
-Create:
+5. **Global State Management:**
+- Zustand for managing application-wide state efficiently.
+- Lightweight and scalable solution for handling user data and video feed.
 
-videoService.js (API calls)
+6. **Notifications:**
+- React Hot Toast for displaying success, error, and info messages.
+- Instant feedback for user actions like uploads and authentication.
 
-userService.js
+7. **API Integration:**
+- Axios for seamless communication between frontend and backend.
+- Modular API services for handling user and video-related requests.
 
-Update:
+8. **Efficient Rendering:**
+- Optimized rendering to ensure smooth user experience.
+- Components re-render only when necessary, improving performance.
 
-VideoCard.jsx
+## Technologies Used:
 
-VideoFeed.jsx (fetch real data)
+- **Next.js:** Frontend framework
+- **Express.js:** Backend framework
+- **Axios:** HTTP client
+- **JWT:** Authentication
+- **React Hot Toast:** Notifications
 
-Add pages:
+## Conclusion:
 
-following/page.jsx
+- This project demonstrates how to connect a Next.js frontend to an Express.js backend, implement authentication, and manage video-related features. It provides hands-on experience in building full-stack applications.
 
-explore-users/page.jsx
+## Acknowledgments:
 
-profile/[userId]/page.jsx
-
-Update upload/page.jsx to allow uploads.
-
-### Part 3: Test Everything
-Register multiple users
-
-Upload videos
-
-Follow/unfollow
-
-Like/unlike
-
-Test login/logout flow
-
-Resources
-Axios
-
-JWT
-
-React Hook Form
-
-Express.js
+- I would like to thank my instructor for their guidance and support throughout this practical. Special thanks to the developers of Axios, JWT, and React Hot Toast for their excellent tools and documentation.
